@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Venkata Naga Raju T — SAP BTP Consultant. 10+ years enterprise SAP experience. Currently at Volvo Group, Bengaluru.">
 <title>Venkata Naga Raju T — SAP BTP Consultant</title>
+<!-- v2 -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{min-height:100vh;background:#0f1a0f;color:#f0ebe0;font-family:'Segoe UI',system-ui,sans-serif;overflow-x:hidden}
@@ -78,11 +79,27 @@ section{padding:72px 6%;position:relative;z-index:1}
 /* TIMELINE */
 .tl-wrap{position:relative;padding-left:40px}
 .tl-wrap::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(168,192,128,0.5),rgba(168,192,128,0.05))}
-.tl-item{position:relative;margin-bottom:32px}
+.tl-item{position:relative;margin-bottom:32px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.tl-item-content{flex:1;min-width:0}
 .tl-dot{position:absolute;left:-36px;top:5px;width:14px;height:14px;border-radius:50%;background:rgba(20,30,18,0.8);border:2px solid rgba(168,192,128,0.5);box-shadow:0 0 10px rgba(168,192,128,0.2)}
 .tl-year{font-size:0.7rem;color:rgba(168,192,128,0.7);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
 .tl-title{font-size:0.95rem;font-weight:700;color:#f0ebe0;margin-bottom:4px}
 .tl-sub{font-size:0.82rem;color:#8a8f85;line-height:1.6}
+.tl-logo{flex-shrink:0;width:80px;height:80px;border-radius:12px;background:#ffffff;border:1px solid rgba(168,192,128,0.2);display:flex;align-items:center;justify-content:center;overflow:hidden;align-self:flex-start}
+.tl-logo img{width:100%;height:100%;object-fit:contain;padding:10px}
+/* Nested company block — simple */
+.tl-company{position:relative;margin-bottom:32px}
+.tl-company-dot{position:absolute;left:-36px;top:6px;width:14px;height:14px;border-radius:50%;background:rgba(20,30,18,0.8);border:2px solid rgba(168,192,128,0.5);box-shadow:0 0 10px rgba(168,192,128,0.2)}
+.tl-company-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.tl-company-name{font-size:1rem;font-weight:800;color:#f0ebe0}
+.tl-company-duration{font-size:0.7rem;color:rgba(168,192,128,0.6);letter-spacing:1px;text-transform:uppercase}
+.tl-nested{display:flex;flex-direction:column;gap:20px;padding-left:16px;margin-left:4px;border-left:1px solid rgba(168,192,128,0.2)}
+.tl-nested-item{position:relative;padding-left:16px}
+.tl-nested-dot{position:absolute;left:-21px;top:4px;width:9px;height:9px;border-radius:50%;background:rgba(20,30,18,0.9);border:1.5px solid rgba(168,192,128,0.5)}
+.tl-nested-role{font-size:0.88rem;font-weight:700;color:#f0ebe0;margin-bottom:3px}
+.tl-nested-year{font-size:0.68rem;color:rgba(168,192,128,0.65);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.tl-nested-badge{display:inline-block;background:rgba(74,92,58,0.3);border:1px solid rgba(168,192,128,0.25);color:#a8c080;font-size:0.65rem;padding:2px 8px;border-radius:10px;margin-left:8px;letter-spacing:0.5px}
+.tl-nested-sub{font-size:0.8rem;color:#8a8f85;line-height:1.6}
 
 /* SKILLS */
 .sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
@@ -213,13 +230,57 @@ footer{text-align:center;padding:28px;border-top:1px solid rgba(168,192,128,0.1)
   <div class="inner">
     <div class="sec-lbl">Career Journey</div><div class="sec-h">Experience</div><div class="sec-line"></div>
     <div class="tl-wrap">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Aug 2022 – Present · 3 yrs 11 mos</div><div class="tl-title">SAP Technical Consultant — Volvo Group</div><div class="tl-sub">Full-time · Bengaluru, Karnataka, India</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Jun 2021 – Aug 2022 · 1 yr 3 mos</div><div class="tl-title">IT Developer Lead — FieldCore</div><div class="tl-sub">Full-time · Hyderabad, Telangana, India · Solutions · Business Process · Development · E1M Module</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Oct 2018 – Jun 2021 · 2 yrs 9 mos</div><div class="tl-title">IT Technology Consultant — SAP</div><div class="tl-sub">Bengaluru, India · Solutions · Business Process · Research · Innovation<br>SAP IT C2R team — end-to-end Contracts to Revenues. i.con AI app (Account Executives), S/4 HANA Migration, CDS Views, Fiori/UI5, JavaScript, ABAP/OO-ABAP, NetWeaver Gateway/oData.</div></div>
-      <div class="tl-item"><div class="tl-dot" style="border-color:rgba(168,192,128,0.3)"></div><div class="tl-year">Sep 2017 – Oct 2018 · 1 yr 2 mos &nbsp;↑ Promoted</div><div class="tl-title">IT Technology Associate Consultant — SAP</div><div class="tl-sub">Bengaluru, Karnataka, India · Research · Development · Innovation<br>SAP IT C2R team. OVP/Overview Page, Web analytics, SAP i.con apps. HANA Migration, CDS Views, Fiori/UI5, JavaScript, ABAP.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Jun 2017 – Sep 2017 · 5 mos</div><div class="tl-title">SAP Technical Consultant — Incon Infotech Pvt Ltd</div><div class="tl-sub">SAP Cloud HCM Engineering — PA-SE-IN tool, On-premise to Cloud sync. ABAP, NetWeaver Gateway/oData, XML, Dell Boomi.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Jun 2016 – Dec 2016 · 7 mos</div><div class="tl-title">Junior SAP Consultant — Vishet Business Solutions</div><div class="tl-sub">Bengaluru, Karnataka, India</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Feb 2015 – Jun 2016 · 1 yr 5 mos</div><div class="tl-title">Jr SAP Consultant — Wynam Infotech</div><div class="tl-sub">Greater Bengaluru Area</div></div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-item-content"><div class="tl-year">Aug 2022 – Present · 3 yrs 11 mos</div><div class="tl-title">SAP Technical Consultant — Volvo Group India</div><div class="tl-sub">Full-time · Bengaluru, Karnataka, India</div></div>
+        <div class="tl-logo"><img src="img/logos/Volvo_logo.png" alt="Volvo Group India"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-item-content"><div class="tl-year">Jun 2021 – Aug 2022 · 1 yr 3 mos</div><div class="tl-title">IT Developer Lead — FieldCore</div><div class="tl-sub">Full-time · Hyderabad, Telangana, India · Solutions · Business Process · Development · E1M Module</div></div>
+        <div class="tl-logo"><img src="img/logos/FieldCore_logo.jpeg" alt="FieldCore"></div>
+      </div>
+      <div class="tl-company">
+        <div class="tl-company-dot"></div>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+          <div>
+            <div class="tl-company-header">
+              <div class="tl-company-name">SAP Labs</div>
+              <div class="tl-company-duration">Sep 2017 – Jun 2021 &nbsp;·&nbsp; 3 yrs 10 mos</div>
+            </div>
+            <div class="tl-nested">
+              <div class="tl-nested-item">
+                <div class="tl-nested-dot"></div>
+                <div class="tl-nested-year">Oct 2018 – Jun 2021 · 2 yrs 9 mos</div>
+                <div class="tl-nested-role">IT Technology Consultant</div>
+                <div class="tl-nested-sub">Bengaluru, India · SAP IT C2R team — end-to-end Contracts to Revenues. i.con AI app (Account Executives), S/4 HANA Migration, CDS Views, Fiori/UI5, JavaScript, ABAP/OO-ABAP, NetWeaver Gateway/oData.</div>
+              </div>
+              <div class="tl-nested-item">
+                <div class="tl-nested-dot"></div>
+                <div class="tl-nested-year">Sep 2017 – Oct 2018 · 1 yr 2 mos</div>
+                <div class="tl-nested-role">IT Technology Associate Consultant <span class="tl-nested-badge">↑ Promoted</span></div>
+                <div class="tl-nested-sub">Bengaluru, India · SAP IT C2R team. OVP/Overview Page, Web analytics, SAP i.con apps. HANA Migration, CDS Views, Fiori/UI5, JavaScript, ABAP.</div>
+              </div>
+            </div>
+          </div>
+          <div class="tl-logo"><img src="img/logos/SAP_logo.jpeg" alt="SAP Labs"></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-item-content"><div class="tl-year">Jun 2017 – Sep 2017 · 5 mos</div><div class="tl-title">SAP Technical Consultant — Tricon Infotech Pvt Ltd</div><div class="tl-sub">SAP Cloud HCM Engineering — PA-SE-IN tool, On-premise to Cloud sync. ABAP, NetWeaver Gateway/oData, XML, Dell Boomi.</div></div>
+        <div class="tl-logo"><img src="img/logos/tricon.png" alt="Tricon Infotech"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-item-content"><div class="tl-year">Jun 2016 – Dec 2016 · 7 mos</div><div class="tl-title">Junior SAP Consultant — Vishist Business Solutions</div><div class="tl-sub">Bengaluru, Karnataka, India</div></div>
+        <div class="tl-logo"><img src="img/logos/vishist.png" alt="Vishist Business Solutions"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-item-content"><div class="tl-year">Feb 2015 – Jun 2016 · 1 yr 5 mos</div><div class="tl-title">Jr SAP Consultant — Wissen Infotech</div><div class="tl-sub">Greater Bengaluru Area</div></div>
+        <div class="tl-logo"><img src="img/logos/wissen.png" alt="Wissen Infotech"></div>
+      </div>
     </div>
   </div>
 </section>
