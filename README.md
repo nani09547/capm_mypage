@@ -6,6 +6,8 @@ Personal portfolio website of **Venkata Naga Raju T**, SAP BTP Consultant at Vol
 
 ## Live
 
+🌐 **Global:** https://nani09547.github.io/capm_mypage/
+
 **Local:** `http://localhost:4004/index.html`
 
 **Start server:**
