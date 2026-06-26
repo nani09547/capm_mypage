@@ -1,0 +1,13 @@
+{
+  "name": "capm_myypage",
+  "version": "1.0.0",
+  "description": "Raju T - Personal Portfolio",
+  "scripts": {
+    "start": "cds watch",
+    "build": "cds build"
+  },
+  "dependencies": {
+    "@sap/cds": "^9",
+    "express": "^4"
+  }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Venkata Naga Raju T — SAP BTP Consultant. 10+ years enterprise SAP experience. Currently at Volvo Group, Bengaluru.">
+<title>Venkata Naga Raju T — SAP BTP Consultant</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:#0f1a0f;color:#f0ebe0;font-family:'Segoe UI',system-ui,sans-serif;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-20%;left:-10%;width:60%;height:80%;background:radial-gradient(ellipse,rgba(74,92,58,0.18),transparent 70%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;bottom:-20%;right:-10%;width:50%;height:70%;background:radial-gradient(ellipse,rgba(74,92,58,0.1),transparent 70%);pointer-events:none;z-index:0}
+
+/* NAME STRIP */
+#name-strip{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;padding:0 24px;background:rgba(10,14,10,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(168,192,128,0.15);border-radius:0 0 20px 20px;transform:translateY(-100%);transition:transform 0.35s ease;justify-content:space-between;gap:24px}
+#name-strip.show{transform:translateY(0)}
+.ns-name{font-size:1.15rem;font-weight:800;color:#f0ebe0;letter-spacing:0.3px;white-space:nowrap;flex-shrink:0}
+.ns-name span{color:#a8c080}
+.ns-nav{display:flex;gap:2px;flex:1;justify-content:center}
+.ns-nav button{background:none;border:none;color:rgba(168,192,128,0.6);font-size:0.85rem;padding:6px 14px;cursor:pointer;border-radius:20px;transition:all 0.2s;font-family:inherit}
+.ns-nav button:hover,.ns-nav button.act{color:#a8c080;background:rgba(74,92,58,0.3)}
+/* NAV — hidden when strip is shown */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:99;background:rgba(15,26,15,0.6);backdrop-filter:blur(20px);border:1px solid rgba(168,192,128,0.15);border-radius:50px;padding:0 8px;display:flex;align-items:center;gap:4px;height:48px;transition:opacity 0.3s,top 0.3s}
+nav.hide{opacity:0;pointer-events:none}
+nav button{background:none;border:none;color:rgba(168,192,128,0.6);font-size:0.85rem;padding:6px 18px;cursor:pointer;border-radius:40px;transition:all 0.2s;font-family:inherit}
+nav button:hover,nav button.act{color:#a8c080;background:rgba(74,92,58,0.3)}
+
+/* GLASS */
+.glass{background:rgba(20,30,18,0.5);backdrop-filter:blur(12px);border:1px solid rgba(168,192,128,0.12);border-radius:20px}
+
+/* SECTIONS */
+section{padding:72px 6%;position:relative;z-index:1}
+#home{padding-top:80px;padding-bottom:72px}
+.inner{max-width:1080px;margin:0 auto}
+.sec-lbl{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(168,192,128,0.6);margin-bottom:10px}
+.sec-h{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;color:#f0ebe0;line-height:1.1}
+.sec-line{width:40px;height:2px;background:linear-gradient(90deg,#6b7f52,transparent);border-radius:2px;margin:12px 0 36px}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center}
+.hero-wrap{max-width:1400px;margin:0 auto;width:100%;padding:0 4%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-info{display:flex;flex-direction:column;gap:0}
+.hero-photo-row{display:flex;align-items:center;gap:32px;margin-bottom:24px}
+.hero-photo{width:180px;height:180px;border-radius:50%;overflow:hidden;border:3px solid rgba(168,192,128,0.45);box-shadow:0 0 56px rgba(74,92,58,0.45);flex-shrink:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-name{font-size:clamp(2.2rem,4vw,3.8rem);font-weight:900;letter-spacing:-1px;line-height:1.05;margin-bottom:10px}
+.hn1{color:#f0ebe0}.hn2{color:#a8c080}
+.hero-role{font-size:1.2rem;color:#8fa672;font-weight:500;margin-bottom:4px}
+.hero-loc{font-size:0.88rem;color:#7a7f75;margin-bottom:32px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:100%}
+.hs{padding:20px 10px;text-align:center}
+.hs-v{font-size:1.7rem;font-weight:800;color:#a8c080}
+.hs-l{font-size:0.62rem;color:#7a7f75;margin-top:5px;text-transform:uppercase;letter-spacing:0.5px}
+.hero-status{display:flex;align-items:center;gap:8px;margin-top:20px;padding-top:20px;border-top:1px solid rgba(168,192,128,0.1)}
+.hero-status-dot{width:8px;height:8px;background:#a8c080;border-radius:50%;animation:p 2s infinite;flex-shrink:0}
+.hero-status-text{font-size:0.82rem;color:#8a8f85}
+.hero-status-text span{color:#a8c080;font-weight:600}
+
+/* BUTTONS */
+.btn-g{background:linear-gradient(135deg,rgba(74,92,58,0.7),rgba(74,92,58,0.4));border:1px solid rgba(168,192,128,0.3);color:#f0ebe0;padding:10px 22px;border-radius:24px;font-size:0.86rem;font-weight:600;cursor:pointer;font-family:inherit;backdrop-filter:blur(8px);transition:all 0.2s}
+.btn-g:hover{background:linear-gradient(135deg,rgba(107,127,82,0.8),rgba(74,92,58,0.6));transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,92,58,0.3)}
+.btn-go{background:transparent;border:1px solid rgba(168,192,128,0.25);color:#8fa672;padding:10px 22px;border-radius:24px;font-size:0.86rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s}
+.btn-go:hover{background:rgba(74,92,58,0.2);color:#f0ebe0;transform:translateY(-2px)}
+
+/* ABOUT */
+.ab-grid{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start}
+.av{width:160px;height:160px;border-radius:50%;border:2px solid rgba(168,192,128,0.3);overflow:hidden;margin:0 auto 16px;box-shadow:0 0 40px rgba(74,92,58,0.2)}
+.av img{width:100%;height:100%;object-fit:cover}
+.ab-bio p{color:#b8b3a8;line-height:1.85;font-size:0.95rem;margin-bottom:12px}
+.ab-bio strong{color:#f0ebe0}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.di{padding:12px 16px}
+.dl{font-size:0.68rem;color:#7a7f75;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
+.dv{font-size:0.87rem;color:#f0ebe0;font-weight:600}
+.dv.hl{color:#a8c080}
+
+/* TIMELINE */
+.tl-wrap{position:relative;padding-left:40px}
+.tl-wrap::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,rgba(168,192,128,0.5),rgba(168,192,128,0.05))}
+.tl-item{position:relative;margin-bottom:32px}
+.tl-dot{position:absolute;left:-36px;top:5px;width:14px;height:14px;border-radius:50%;background:rgba(20,30,18,0.8);border:2px solid rgba(168,192,128,0.5);box-shadow:0 0 10px rgba(168,192,128,0.2)}
+.tl-year{font-size:0.7rem;color:rgba(168,192,128,0.7);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.tl-title{font-size:0.95rem;font-weight:700;color:#f0ebe0;margin-bottom:4px}
+.tl-sub{font-size:0.82rem;color:#8a8f85;line-height:1.6}
+
+/* SKILLS */
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.sk-c{padding:20px;transition:border-color 0.2s}
+.sk-c:hover{border-color:rgba(168,192,128,0.3)}
+.sk-h{font-size:0.72rem;font-weight:700;color:#a8c080;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.sk-tags{display:flex;flex-wrap:wrap;gap:7px}
+.sk-tag{background:rgba(74,92,58,0.2);border:1px solid rgba(74,92,58,0.3);color:#b8b3a8;padding:4px 11px;border-radius:14px;font-size:0.78rem;transition:all 0.2s}
+.sk-tag:hover{background:rgba(74,92,58,0.4);color:#f0ebe0;cursor:default}
+
+/* PROJECTS */
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.pr-c{overflow:hidden;transition:all 0.2s}
+.pr-c:hover{border-color:rgba(168,192,128,0.3);transform:translateY(-4px)}
+.pr-top{height:120px;background:linear-gradient(135deg,rgba(74,92,58,0.4),rgba(20,30,18,0.8));display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.pr-b{padding:20px}
+.pr-t{font-size:0.98rem;font-weight:700;color:#f0ebe0;margin-bottom:7px}
+.pr-d{font-size:0.82rem;color:#8a8f85;line-height:1.65;margin-bottom:13px}
+.pr-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.pr-tg{background:rgba(74,92,58,0.25);border:1px solid rgba(74,92,58,0.35);color:#a8c080;padding:3px 9px;border-radius:12px;font-size:0.73rem}
+.pr-lnk{background:none;border:1px solid rgba(168,192,128,0.2);color:#8fa672;padding:5px 14px;border-radius:14px;font-size:0.78rem;cursor:pointer;font-family:inherit;transition:all 0.2s;text-decoration:none;display:inline-block}
+.pr-lnk:hover{background:rgba(74,92,58,0.3);color:#f0ebe0;border-color:rgba(168,192,128,0.4)}
+
+/* CONTACT */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ct-l,.ct-r{padding:28px}
+.ct-l h3{font-size:1.05rem;font-weight:700;color:#f0ebe0;margin-bottom:8px}
+.ct-l p{color:#8a8f85;font-size:0.87rem;line-height:1.7;margin-bottom:22px}
+.sc-list{display:flex;flex-direction:column;gap:10px}
+.sc-it{display:flex;align-items:center;gap:12px;padding:12px 16px;text-decoration:none;color:#f0ebe0;transition:border-color 0.2s}
+.sc-it:hover{border-color:rgba(168,192,128,0.3)}
+.si-ic{font-size:1.1rem;width:28px;text-align:center}
+.si-lb{font-size:0.68rem;color:#7a7f75;text-transform:uppercase;letter-spacing:1px}
+.si-vl{font-size:0.85rem;color:#f0ebe0;font-weight:600}
+.cf{display:flex;flex-direction:column;gap:12px}
+.cf input,.cf textarea{background:rgba(20,30,18,0.6);border:1px solid rgba(168,192,128,0.12);border-radius:8px;padding:10px 14px;color:#f0ebe0;font-size:0.87rem;font-family:inherit;outline:none;width:100%;transition:border-color 0.2s;backdrop-filter:blur(4px)}
+.cf input:focus,.cf textarea:focus{border-color:rgba(168,192,128,0.35)}
+.cf textarea{min-height:110px;resize:vertical}
+
+/* FOOTER */
+footer{text-align:center;padding:28px;border-top:1px solid rgba(168,192,128,0.1);color:#555;font-size:0.78rem;position:relative;z-index:1}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .ct-grid,.hero-wrap{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  nav button{padding:6px 10px;font-size:0.78rem}
+}
+</style>
+</head>
+<body>
+
+<div id="name-strip">
+  <div class="ns-name">Venkata Naga <span>Raju T</span></div>
+  <div class="ns-nav" id="strip-nav">
+    <button onclick="s('home')">Home</button>
+    <button onclick="s('journey')">Journey</button>
+    <button onclick="s('skills')">Skills</button>
+    <button onclick="s('projects')">Projects</button>
+    <button onclick="s('contact')">Contact</button>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
+    <a href="mailto:thottempudinani6@gmail.com" style="color:#a8c080;font-size:0.76rem;text-decoration:none;white-space:nowrap">✉ thottempudinani6@gmail.com</a>
+    <a href="tel:+918095996301" style="color:#8a8f85;font-size:0.76rem;text-decoration:none;white-space:nowrap">📞 +91 80959 96301</a>
+  </div>
+</div>
+
+<nav id="nav">
+  <button class="act" onclick="s('home')">Home</button>
+  <button onclick="s('journey')">Journey</button>
+  <button onclick="s('skills')">Skills</button>
+  <button onclick="s('projects')">Projects</button>
+  <button onclick="s('contact')">Contact</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" style="padding:0 2%">
+  <div class="hero-wrap">
+
+    <div class="hero-info">
+      <div class="hero-photo-row">
+        <div class="hero-photo">
+          <img src="img/profile.jpg" onerror="this.style.display='none'" alt="Raju T">
+        </div>
+        <div>
+          <h1 class="hero-name"><span class="hn1">Venkata Naga </span><span class="hn2">Raju T</span></h1>
+          <p class="hero-role">SAP BTP Consultant</p>
+          <p class="hero-loc">Bengaluru, India</p>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-go" onclick="s('journey')">Journey</button>
+        <button class="btn-go" onclick="s('skills')">Skills</button>
+        <button class="btn-go" onclick="s('projects')">Projects</button>
+        <button class="btn-go" onclick="s('contact')">Contact</button>
+      </div>
+      <div class="glass hero-stats">
+        <div class="hs"><div class="hs-v">10+</div><div class="hs-l">Years SAP</div></div>
+        <div class="hs"><div class="hs-v">15+</div><div class="hs-l">Projects</div></div>
+        <div class="hs"><div class="hs-v">SAP</div><div class="hs-l">Certified</div></div>
+        <div class="hs"><div class="hs-v">2×</div><div class="hs-l">Awards</div></div>
+      </div>
+      <div class="hero-status">
+        <div class="hero-status-dot"></div>
+        <div class="hero-status-text">Status: <span>Open to Opportunities</span> &nbsp;·&nbsp; Hybrid / Remote</div>
+      </div>
+    </div>
+
+    <div class="glass" style="padding:44px 40px">
+      <div class="sec-lbl" style="margin-bottom:18px">About Me</div>
+      <div class="ab-bio" style="margin-bottom:32px">
+        <p style="font-size:1.05rem;line-height:1.9">SAP BTP Consultant with <strong>10+ years</strong> of enterprise experience. Currently at <strong>Volvo Group, Bengaluru</strong>.</p>
+        <p style="margin-top:16px;font-size:1.05rem;line-height:1.9">Recognised with <strong>SAP Move Award (2019)</strong>, <strong>SAP Honor Award (2018)</strong>, and nominated for the <strong>Hasso Plattner Founders' Award 2018</strong>.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="glass di" style="padding:16px 20px"><div class="dl">Company</div><div class="dv" style="font-size:1rem">Volvo Group</div></div>
+        <div class="glass di" style="padding:16px 20px"><div class="dl">Location</div><div class="dv" style="font-size:1rem">Bengaluru, India</div></div>
+        <div class="glass di" style="padding:16px 20px"><div class="dl">Experience</div><div class="dv" style="font-size:1rem">10+ Years SAP</div></div>
+        <div class="glass di" style="padding:16px 20px"><div class="dl">Certification</div><div class="dv" style="font-size:1rem">ABAP for HANA 2.0</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="inner">
+    <div class="sec-lbl">Career Journey</div><div class="sec-h">Experience</div><div class="sec-line"></div>
+    <div class="tl-wrap">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Aug 2022 – Present · 3 yrs 11 mos</div><div class="tl-title">SAP Technical Consultant — Volvo Group</div><div class="tl-sub">Full-time · Bengaluru, Karnataka, India</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Jun 2021 – Aug 2022 · 1 yr 3 mos</div><div class="tl-title">IT Developer Lead — FieldCore</div><div class="tl-sub">Full-time · Hyderabad, Telangana, India · Solutions · Business Process · Development · E1M Module</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Oct 2018 – Jun 2021 · 2 yrs 9 mos</div><div class="tl-title">IT Technology Consultant — SAP</div><div class="tl-sub">Bengaluru, India · Solutions · Business Process · Research · Innovation<br>SAP IT C2R team — end-to-end Contracts to Revenues. i.con AI app (Account Executives), S/4 HANA Migration, CDS Views, Fiori/UI5, JavaScript, ABAP/OO-ABAP, NetWeaver Gateway/oData.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:rgba(168,192,128,0.3)"></div><div class="tl-year">Sep 2017 – Oct 2018 · 1 yr 2 mos &nbsp;↑ Promoted</div><div class="tl-title">IT Technology Associate Consultant — SAP</div><div class="tl-sub">Bengaluru, Karnataka, India · Research · Development · Innovation<br>SAP IT C2R team. OVP/Overview Page, Web analytics, SAP i.con apps. HANA Migration, CDS Views, Fiori/UI5, JavaScript, ABAP.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Jun 2017 – Sep 2017 · 5 mos</div><div class="tl-title">SAP Technical Consultant — Incon Infotech Pvt Ltd</div><div class="tl-sub">SAP Cloud HCM Engineering — PA-SE-IN tool, On-premise to Cloud sync. ABAP, NetWeaver Gateway/oData, XML, Dell Boomi.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Jun 2016 – Dec 2016 · 7 mos</div><div class="tl-title">Junior SAP Consultant — Vishet Business Solutions</div><div class="tl-sub">Bengaluru, Karnataka, India</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">Feb 2015 – Jun 2016 · 1 yr 5 mos</div><div class="tl-title">Jr SAP Consultant — Wynam Infotech</div><div class="tl-sub">Greater Bengaluru Area</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="inner">
+    <div class="sec-lbl">Expertise</div><div class="sec-h">Skills & Tech Stack</div><div class="sec-line"></div>
+    <div class="sk-grid">
+      <div class="glass sk-c"><div class="sk-h">SAP Backend</div><div class="sk-tags"><span class="sk-tag">ABAP</span><span class="sk-tag">SAP HANA</span><span class="sk-tag">CAP</span><span class="sk-tag">OData v4</span><span class="sk-tag">BTP</span></div></div>
+      <div class="glass sk-c"><div class="sk-h">SAP Frontend</div><div class="sk-tags"><span class="sk-tag">UI5</span><span class="sk-tag">Fiori</span><span class="sk-tag">SmartControls</span><span class="sk-tag">sap.viz</span></div></div>
+      <div class="glass sk-c"><div class="sk-h">SAP Platform</div><div class="sk-tags"><span class="sk-tag">SAP BTP</span><span class="sk-tag">Analytics Cloud</span><span class="sk-tag">Document AI</span><span class="sk-tag">NetWeaver Gateway</span></div></div>
+      <div class="glass sk-c"><div class="sk-h">Cloud & APIs</div><div class="sk-tags"><span class="sk-tag">Google APIs</span><span class="sk-tag">OAuth2</span><span class="sk-tag">Node.js</span><span class="sk-tag">REST</span></div></div>
+      <div class="glass sk-c"><div class="sk-h">Programming</div><div class="sk-tags"><span class="sk-tag">ABAP</span><span class="sk-tag">JavaScript</span><span class="sk-tag">SQL</span><span class="sk-tag">HTML/CSS</span><span class="sk-tag">CDS</span></div></div>
+      <div class="glass sk-c"><div class="sk-h">Tools</div><div class="sk-tags"><span class="sk-tag">SAP BAS</span><span class="sk-tag">VS Code</span><span class="sk-tag">Git</span><span class="sk-tag">HANA Studio</span><span class="sk-tag">Jenkins</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="inner">
+    <div class="sec-lbl">Work</div><div class="sec-h">Projects</div><div class="sec-line"></div>
+    <div class="pr-grid">
+      <div class="glass pr-c"><div class="pr-top">🔄</div><div class="pr-b"><div class="pr-t">Order To Cash Cockpit</div><div class="pr-d">Enterprise O2C automation at SAP. Nominated for Hasso Plattner Founders' Award 2018.</div><div class="pr-tags"><span class="pr-tg">ABAP</span><span class="pr-tg">UI5</span><span class="pr-tg">SAP ERP</span><span class="pr-tg">Fiori</span></div></div></div>
+      <div class="glass pr-c"><div class="pr-top">📊</div><div class="pr-b"><div class="pr-t">Vehicle Expense Tracker</div><div class="pr-d">SAP CAP + Google Sheets as live database + SAP Document AI + analytics dashboard.</div><div class="pr-tags"><span class="pr-tg">SAP CAP</span><span class="pr-tg">UI5</span><span class="pr-tg">Node.js</span><span class="pr-tg">Document AI</span></div><a class="pr-lnk" href="https://github.com/raju-t" target="_blank">GitHub</a></div></div>
+      <div class="glass pr-c"><div class="pr-top">🌐</div><div class="pr-b"><div class="pr-t">Personal Portfolio</div><div class="pr-d">This site — SAP CAP backend, pure HTML/CSS/JS frontend with MVC architecture.</div><div class="pr-tags"><span class="pr-tg">SAP CAP</span><span class="pr-tg">HTML5</span><span class="pr-tg">CSS3</span><span class="pr-tg">JavaScript</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="sec-lbl">Say Hello</div><div class="sec-h">Get In Touch</div><div class="sec-line"></div>
+    <div class="ct-grid">
+      <div class="glass ct-l">
+        <h3>Let's Work Together</h3>
+        <p>Open to SAP consulting, full-stack development projects, and collaboration opportunities.</p>
+        <div class="sc-list">
+          <a class="glass sc-it" href="mailto:thottempudinani6@gmail.com"><span class="si-ic">✉️</span><div><div class="si-lb">Email</div><div class="si-vl">thottempudinani6@gmail.com</div></div></a>
+          <a class="glass sc-it" href="https://in.linkedin.com/in/venkata-naga-raju-thottempudi" target="_blank"><span class="si-ic">💼</span><div><div class="si-lb">LinkedIn</div><div class="si-vl">venkata-naga-raju-thottempudi</div></div></a>
+          <div class="glass sc-it"><span class="si-ic">📍</span><div><div class="si-lb">Location</div><div class="si-vl">Bengaluru, Karnataka, India</div></div></div>
+        </div>
+      </div>
+      <div class="glass ct-r">
+        <div class="cf">
+          <input placeholder="Your Name">
+          <input placeholder="Email Address" type="email">
+          <textarea placeholder="Tell me about your project..."></textarea>
+          <button class="btn-g" style="align-self:flex-start">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Venkata Naga Raju T &nbsp;·&nbsp; Built with SAP CAP + HTML / CSS / JS</footer>
+
+<script>
+  // Scroll to section
+  function s(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+  // Active nav highlight on scroll + show name when hero is out of view
+  const sections  = ['home','journey','skills','projects','contact'];
+  const navBtns   = document.querySelectorAll('nav button');
+  const stripBtns = document.querySelectorAll('.ns-nav button');
+  const heroName  = document.querySelector('.hero-name');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        navBtns.forEach((b,i)   => b.classList.toggle('act', sections[i] === e.target.id));
+        stripBtns.forEach((b,i) => b.classList.toggle('act', sections[i] === e.target.id));
+      }
+    });
+  }, {threshold: 0.35});
+  sections.forEach(id => { const el = document.getElementById(id); if(el) observer.observe(el); });
+
+  // Show/hide name strip based on hero visibility
+  const strip = document.getElementById('name-strip');
+  const nav   = document.getElementById('nav');
+  const heroObserver = new IntersectionObserver(entries => {
+    const hidden = !entries[0].isIntersecting;
+    strip.classList.toggle('show', hidden);
+    nav.classList.toggle('hide', hidden);
+  }, {threshold: 0.1});
+  if(heroName) heroObserver.observe(heroName);
+</script>
+</body>
+</html>
